@@ -487,7 +487,7 @@ if (p === 1) {
     link.target = '_blank';
     link.rel = 'noreferrer noopener';
     const img = document.createElement('img');
-    img.src = `assets/Images/Logo/Marvel.png`;
+    img.src = `assets/Images/LOGO/Marvel.png`;
     img.className = 'marvel';
     img.alt = 'marvel';
     img.addEventListener('mouseenter', () => {
