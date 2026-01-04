@@ -1,0 +1,16 @@
+if (p === 0) {
+    const demo = DEMOS[idx1];
+    // Create clickable link
+    const link = document.createElement('a');
+    link.href = `https://codepen.io/jh3y/full/${demo.id}`;  // Change to your own links
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    
+    // Create image
+    const img = document.createElement('img');
+  img.src = `assets/Images/10.png`;
+    img.className = 'cam';
+    img.alt = 'cam'
+    link.appendChild(img);
+    frontHalf.appendChild(link);
+  }

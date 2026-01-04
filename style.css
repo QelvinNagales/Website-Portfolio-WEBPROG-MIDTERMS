@@ -1,0 +1,992 @@
+/* ============================================
+   RESET STYLES
+   - Removes default browser spacing
+============================================ */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================
+   COLOR & THEME VARIABLES
+   
+   HOW TO CHANGE COLORS:
+   - Change these values to customize the book appearance
+   
+   --page-count: Number of total page sides (20 = 10 pages)
+   --page-scroll: How much scroll per page flip (higher = slower)
+   --underline: Color of lined paper effect (rgba for transparency)
+   --spine: Book spine color (the binding)
+   --cover: Front and back cover color
+   --bg: Background color of the entire page
+   --insert: Inside cover color (the lighter area)
+   --page: Interior page color (paper color)
+   
+   COLOR EXAMPLES:
+   - Red cover: --cover: #8B0000;
+   - Blue spine: --spine: #1a237e;
+   - Cream pages: --page: #FFFDD0;
+   - Dark background: --bg: #1a1a1a;
+============================================ */
+:root {
+  --page-count: 30;
+  --page-scroll: 25;
+  --underline: rgba(64, 64, 64, 0.4);
+  --spine: #000;           /* Book spine - change for different binding color */
+  --cover: #1a1a1a;        /* Cover color - dark gray by default */
+  --bg: #464545;           /* Page background - medium gray */
+  --insert: #d9d9d9;       /* Inside cover - light gray */
+  --page: #e6e6e6;         /* Paper color - off-white */
+}
+
+body {
+  width: 100vw;
+  height: calc(((var(--page-count) + 2) * var(--page-scroll)) * 1vh);
+  background: var(--bg);
+  overflow-x: hidden;
+}
+
+h1 {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  margin: 0;
+  font-size: 2rem;
+  color: #808080;
+  font-weight: bold;
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* Progress Bar */
+.progress-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 4px;
+  width: 0%;
+  background: linear-gradient(90deg, #13e796, #02f7ff);
+  z-index: 9999;
+}
+
+/* Book Container */
+.book {
+  height: 70vmin;
+  width: 50vmin;
+  min-width: 300px;
+  min-height: 400px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.8);
+  transform-style: preserve-3d;
+  perspective: 1200px;
+}
+
+/* ============================================
+   BOOK SPINE
+   - The binding on the left side of the book
+   
+   HOW TO CUSTOMIZE:
+   - width: Change spine thickness (default: 12px)
+   - background: Uses --spine color from :root
+   - Add gradient: background: linear-gradient(to right, #333, #000);
+============================================ */
+.book__spine {
+  height: 100%;
+  width: 10px;             /* Spine thickness */
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--spine); /* Change in :root or directly here */
+  transform-origin: 0 50%;
+  transform: translate3d(0, 0, -13px) scaleX(1) rotateY(0deg);
+}
+
+/* Book Insert (inside covers) */
+.book__insert {
+  content: '';
+  position: absolute;
+  height: 94%;
+  width: 90%;
+  background: var(--insert);
+  top: 50%;
+  right: 0;
+  transform: translate(0, -50%);
+  border-radius: 5% 0 0 5%;
+}
+
+/* Core Page Styling */
+.page {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.page__number {
+  position: absolute;
+  color: #808080;
+  bottom: 1rem;
+  font-size: 20px;
+  font-weight: bold;
+  pointer-events: none;
+}
+
+.page__half--front .page__number {
+  right: 1rem;
+}
+
+.page__half--back .page__number {
+  left: 1rem;
+}
+
+.page__half {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: rotateY(calc(var(--rotation, 0) * 1deg)) translate3d(0, 0, calc((0.5 * var(--coefficient, 0)) * 1px));
+  -webkit-clip-path: inset(0 0.5% 0 0.5%);
+  clip-path: inset(0 0.5% 0 0.5%);
+}
+
+.page__half--front {
+  --rotation: 0;
+  --coefficient: 0;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 0 5% 5% 0;
+}
+
+.page__half--back {
+  --rotation: 180;
+  --coefficient: 2;
+  border-radius: 5% 0 0 5%;
+}
+
+/* Book Pages */
+.book__page {
+  position: absolute;
+  left: 2%;
+  top: 50%;
+  height: 94%;
+  width: 85%;
+  transform: translate(0, -50%);
+  transform-origin: 0% 50%;
+  border-radius: 0 5% 5% 0;
+  z-index: calc(((var(--page-count) + 2) - var(--page-index)) * 2);
+  transform-style: preserve-3d;
+}
+
+/* Book Cover */
+.book__cover {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  background: var(--cover);
+  border-radius: 0 5% 5% 0;
+}
+
+.book__cover--front {
+  transform-origin: 0 50%;
+}
+
+.book__cover--front .page__half--back {
+  border-right: 1rem solid var(--spine);
+}
+
+.book__cover--back {
+  transform-origin: 0% 50%;
+}
+
+.book__cover--back .page__half--front {
+  background: var(--cover);
+  clip-path: none;
+  border-radius: 0 5% 5% 0;
+}
+
+.book__cover--back .page__half--back {
+  background: var(--cover);
+  clip-path: none;
+  border-radius: 5% 0 0 5%;
+  width: 100%;
+  left: 0;
+}
+
+.book__cover--back .book__insert {
+  left: 0;
+  right: auto;
+  border-radius: 0 5% 5% 0;
+}
+
+/* ============================================
+   PAGE CONTENT - LINED PAPER EFFECT
+   - Creates horizontal lines like notebook paper
+   
+   HOW TO CUSTOMIZE:
+   - Remove lines: Delete the repeating-linear-gradient, keep just var(--page)
+   - Change line spacing: Modify the "1rem" values
+   - Change line color: Modify --underline in :root
+   - Plain white pages: background: white;
+   - Add an image: background: url('your-image.jpg') center/cover;
+============================================ */
+.book__page:not(.book__cover) .page__half {
+  background:
+    repeating-linear-gradient(
+      0deg,
+      transparent 0 1rem,              /* Space between lines */
+      var(--underline) 1rem calc(1rem + 1px),  /* Line itself */
+      transparent calc(1rem + 1px)
+    ) 0 1rem / 100% 100% no-repeat,
+    var(--page);  /* Base page color */
+}
+
+/* Sticker */
+.sticker {
+  height: 15%;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  transform: rotate(-25deg);
+}
+
+/* ============================================
+   CODE/TEXT BLOCK STYLING
+   - Use <pre class="code">Your text</pre> in HTML
+   - Perfect for displaying code or styled text
+   
+   HOW TO ADD TEXT TO PAGES:
+   1. Simple text: <p>Your paragraph here</p>
+   2. Styled code: <pre class="code">Your text</pre>
+   3. Heading: <h2>Title</h2>
+   4. With custom style: <p style="color: red; font-size: 20px;">Red text</p>
+============================================ */
+.code {
+  line-height: 1.2;
+  font-family: monospace;    /* Code-style font */
+  white-space: pre-line;     /* Preserves line breaks */
+  max-width: 100%;
+  max-height: 100%;
+  font-weight: bold;
+  color: #0f0f0f;            /* Text color */
+  text-shadow: 2px 2px 0 #1c1c1c;
+  border-radius: 5%;
+  display: block;
+  overflow: hidden;
+}
+
+/* Logo */
+.logo {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  height: 25%;
+}
+
+/* Links and Images */
+a {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  display: block;
+}
+
+img {
+  width: 90%;
+  height: 90%;
+  -o-object-fit: center;
+  object-fit: center;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.kalbo{
+  width: 50%;
+  height: auto;
+  top: 40%;
+  left: -40%;
+  rotate: 90deg;
+  
+}
+
+.title{
+  width: auto;
+  height: auto;
+  top: 25%;
+}
+.title2{
+  width: 100%;
+  height: auto;
+  top: 20%;
+  left: 45%;
+}
+.title3{
+  width: 100%;
+  height: auto;
+  top: 20%;
+  left: 50%;
+}
+.sun{
+  width: 40%;
+  height:30%;
+  top: 55%;
+  left: 80%;
+}
+
+.spr{
+  width: 30%;
+  height: auto;
+  top: 45%;
+  left: 20%;
+}
+
+.clove{
+  width: 40%;
+  height: auto;
+  top: 72%;
+  left: 94.5%;
+  rotate: -40deg;
+}
+
+.fci{  
+  width: 70%;
+  height: 60%;
+  top: 75%;
+}
+
+.van{
+  width: 40%;
+  height: auto;
+  top: 85%;
+  left: 23%;
+  rotate: -20deg;
+}
+
+.plane{
+  width: 30%;
+  height: auto;
+  top: 65%;
+  left: 20%;
+}
+
+.dp{
+  position: fixed;
+  width: 40%;
+  height: auto;
+  left: 81%;
+  top: 15%;
+
+}
+
+.cam{
+  position: fixed;
+  width: 14%;
+  height: auto;
+  left: 67%;
+  top: 25%;
+}
+
+
+/* ========== PAGE TEXT STYLES ========== */
+.page-text {
+  position: absolute;
+  bottom: 70%;
+  left: 33%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 73%;
+  z-index: 10;
+  font-family: 'Handlee', cursive;
+}
+
+.page-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin: 40% 0 0 0;
+  font-family: 'Handlee', cursive;
+}
+
+.page-subtitle {
+  font-size: 23px;
+  font-weight: 600;
+  color: #000000;
+  margin: 0 0 0 0;
+  font-family: 'Handlee', cursive;
+}
+
+.page-description {
+  font-size: 20px;
+  font-weight: 400;
+  color: #000000;
+  margin: 0;
+  line-height: 1.6;
+  font-family: 'Handlee', cursive;
+}
+/* ========== END PAGE TEXT STYLES ========== */
+.bulb{
+  width: 180%;
+  height: auto;
+  left: -95%;
+  top: 33%;
+  rotate: 18deg;
+}
+
+.GTKM-container {
+  position: absolute;
+  bottom: 63%;
+  left: 45%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 73%;
+  z-index: 10;
+  font-family: 'Handlee', cursive;
+}
+
+.GTKM{
+ font-size: 35px;
+  font-weight: bold;
+  color: #000000;
+  margin: 0 0 0 0;
+  font-family: 'Handlee', cursive;
+  left: 0%;
+}
+
+.about{
+  position: absolute;
+  bottom: 26%;
+  left: 45%;
+  transform: translateX(-50%);
+  text-align: left;
+  width: 80%;
+  z-index: 10;
+  font-family: 'Handlee', cursive;
+}
+
+.abt{
+  font-size: 1rem;
+  font-weight: 400;
+    color: #000000;
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Handlee', cursive;
+}
+
+.star{
+  position: fixed;
+  width: 30%;
+  height: auto;
+  top: 40%;
+  left: 89%;
+}
+
+.star2{
+  position: fixed;
+  width: 20%;
+  height: auto;
+  top: 45%;
+  left: 75%;
+}
+
+.star3{
+  position: fixed;
+  width: 15%;
+  height: auto;
+  top: 50%;
+  left: 90%;
+}
+
+.description{
+  position: absolute;
+  bottom: 7%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: justify;
+  width: 90%;
+  z-index: 10;
+  font-family: 'Handlee', cursive;
+}
+
+.desc{
+  font-size: 1rem;
+  font-weight: 400;
+    color: #000000;
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Handlee', cursive;
+}
+
+.terdpage{
+ position: absolute;
+  bottom: 63%;
+  left: 45%;
+  transform: translateX(-50%);
+  text-align: justify;
+  width: 80%;
+  z-index: 10;
+  font-family: 'Handlee', cursive;
+}
+
+.terd{
+  font-size: 1rem;
+  font-weight: 400;
+    color: #000000;
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Handlee', cursive;
+}
+
+.motto{
+  font-size: 1rem;
+  font-weight: 400;
+  color: #000000;
+  margin: 0;
+  line-height: 1.6;
+  font-family: 'Handlee', cursive;
+}
+
+.clove2{
+  position: fixed;
+  width: 30%;
+  height: auto;
+  top: 73%;
+  left: 95%;
+  rotate: -40deg;
+}
+
+.hearts{
+  position: fixed;
+  width: 25%;
+  height: auto;
+  top: 5%;
+  left: 65%;
+  rotate: -20deg;
+}
+
+.pers{
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: left;
+  width: 90%;
+  z-index: 10;
+  font-family: 'Handlee', cursive;
+
+}
+
+.name{
+  font-size: 1.5rem;
+  font-weight: bolder;
+    color: #000000;
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Handlee', cursive;
+}
+
+.subject{
+  font-size: 1.5rem;
+  font-weight: bolder;
+    color: #000000;
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Handlee', cursive;
+}
+
+.prof{
+  font-size: 1.5rem;
+  font-weight: bolder;
+    color: #000000;
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Handlee', cursive;
+}
+
+.apc{
+  position: fixed;
+  width: 25%;
+  height: auto;
+  top: 82%;
+  left: 16%;
+}
+
+.vg{
+  position: fixed;
+  width: 20%;
+  height: auto;
+  top: 67%;
+  left: 80%;
+  rotate: 10deg;
+}
+
+.music{
+  position: fixed;
+  width: 25%;
+  height: auto;
+  top: 80%;
+  left: 50%;
+}
+
+.books{
+  position: fixed;
+  width: 20%;
+  height: auto;
+  top: 90%;
+  left: 75%;
+  rotate: -10deg;
+}
+
+.marvel{
+  position: fixed;
+  width: 35%;
+  height: auto;
+  top: 93%;
+  left: 45%;
+}
+
+/* Gallery Container */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px; 
+  align-content: center;
+  width: 90%;
+  height: 60%;
+  position: absolute;
+  top: 60%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+}
+
+/* Gallery Images */
+.gallery-img {
+  position: relative;  /* Override the default absolute */
+  width: 100%;       /* Fill the width of the grid cell */
+  height: auto;      /* Maintain aspect ratio and remove vertical gaps */
+  object-fit: contain; /* Prevents logos from stretching/distorting */
+  display: block;    /* Removes tiny bottom alignment gaps */
+  margin: 0 auto;
+}
+
+.orgs-container {
+  position: absolute;
+  bottom: 55%;
+  left: 58%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 90%;
+  z-index: 10;
+  font-family: 'Handlee', cursive;
+}
+
+.orgs{
+  font-size: 1.8rem;
+  font-weight: bold;
+    color: #000000;
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Handlee', cursive;
+    text-align: center;
+}
+
+.org-logo{
+  position: fixed;
+  width: 16%;
+  height: auto;
+  top: 41%;
+  left: 10%;
+}
+
+/* ============================================
+   ORGANIZATION LOGO IMAGES
+============================================ */
+.MSC {
+  position: absolute;
+  width: 20%;
+  height: auto;
+  top: 52%;
+  left: 13%;
+  cursor: pointer;
+}
+
+.BAND {
+  position: absolute;
+  width: 20%;
+  height: auto;
+  top: 52%;
+  left: 28%;
+  cursor: pointer;
+}
+
+.SOAR {
+  position: absolute;
+  width: 12%;
+  height: auto;
+  top: 52%;
+  left: 44%;
+  cursor: pointer;
+}
+
+.GG {
+  position: absolute;
+  width: 12%;
+  height: auto;
+  top: 52%;
+  left: 60%;
+  cursor: pointer;
+}
+
+.JISSA {
+  position: absolute;
+  width: 12%;
+  height: auto;
+  top: 65%;
+  left: 12%;
+  cursor: pointer;
+}
+
+.JPCS {
+  position: absolute;
+  width: 12%;
+  height: auto;
+  top: 65%;
+  left: 28%;
+  cursor: pointer;
+}
+
+.BRIDGE {
+  position: absolute;
+  width: 12%;
+  height: auto;
+  top: 65%;
+  left: 44%;
+  cursor: pointer;
+}
+
+.SoCIT {
+  position: absolute;
+  width: 12%;
+  height: auto;
+  top: 65%;
+  left: 60%;
+  cursor: pointer;
+}
+
+/* ============================================
+   FRIEND PHOTO IMAGES
+============================================ */
+.img1 {
+  position: absolute;
+  width: 22%;
+  height: auto;
+  top: 78%;
+  left: 8%;
+  border: #966b48 solid 4px;
+  border-radius: 5px;
+  cursor: pointer;
+  rotate: -5deg;
+}
+
+.img2 {
+  position: absolute;
+  width: 22%;
+  height: auto;
+  top: 80%;
+  left: 30%;
+  border: #966b48 solid 4px;
+  border-radius: 5px;
+  cursor: pointer;
+  rotate: 3deg;
+}
+
+.img3 {
+  position: absolute;
+  width: 22%;
+  height: auto;
+  top: 78%;
+  left: 52%;
+  border: #966b48 solid 4px;
+  border-radius: 5px;
+  cursor: pointer;
+  rotate: -3deg;
+}
+
+.img4 {
+  position: absolute;
+  width: 22%;
+  height: auto;
+  top: 92%;
+  left: 15%;
+  border: #966b48 solid 4px;
+  border-radius: 5px;
+  cursor: pointer;
+  rotate: 4deg;
+}
+
+.img5 {
+  position: absolute;
+  width: 22%;
+  height: auto;
+  top: 94%;
+  left: 38%;
+  border: #966b48 solid 4px;
+  border-radius: 5px;
+  cursor: pointer;
+  rotate: -4deg;
+}
+
+.img6 {
+  position: absolute;
+  width: 22%;
+  height: auto;
+  top: 92%;
+  left: 60%;
+  border: #966b48 solid 4px;
+  border-radius: 5px;
+  cursor: pointer;
+  rotate: 2deg;
+}
+
+/* ============================================
+   FRIENDS PHOTO GRID
+============================================ */
+.friends-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px; 
+  align-content: center;
+  width: 90%;
+  height:30%;
+  position: absolute;
+  top: 86%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  z-index: 900;
+}
+
+.friends-grid-img{
+  position: relative;  /* Override the default absolute */
+  width: 90%;       /* Fill the width of the grid cell */
+  height: auto;      /* Maintain aspect ratio and remove vertical gaps */
+  object-fit: contain; /* Prevents logos from stretching/distorting */
+  display: block;    /* Removes tiny bottom alignment gaps */
+  margin: 0 auto;
+  border: #855a0a solid 2px;
+  border-radius: 7px;
+}
+
+/* Individual friend image classes */
+.friend-img-1,
+.friend-img-2,
+.friend-img-3,
+.friend-img-4,
+.friend-img-5,
+.friend-img-6 {
+  position: relative;
+  width: 83%;
+  height: auto;
+  aspect-ratio: 16/9;
+  object-fit: cover;
+  border: #966b48 solid 4px;
+  border-radius: 5px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  transform-origin: center center;
+}
+
+.friend-img-1 {
+
+}
+
+.friend-img-2 {
+  /* Top center */
+}
+
+.friend-img-3 {
+  /* Top right */
+}
+
+.friend-img-4 {
+  /* Bottom left */
+}
+
+.friend-img-5 {
+  /* Bottom center */
+}
+
+.friend-img-6 {
+  /* Bottom right */
+}
+
+/* ============================================
+   IMAGE POPUP / LIGHTBOX STYLES (Modal)
+============================================ */
+.modal {
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  cursor: pointer;
+}
+
+.modal.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.modal-img {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  max-width: 80vw;
+  max-height: 80vh;
+  width: auto !important;
+  height: auto !important;
+  object-fit: contain;
+  border-radius: 10px;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.2);
+  transform: scale(0.7) !important;
+  opacity: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  cursor: default;
+}
+
+.modal.active .modal-img {
+  transform: scale(1) !important;
+  opacity: 1;
+}
+
