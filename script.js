@@ -143,7 +143,7 @@ if (p === 1) {
   // Array of your images with links
   const images = [
     { src: 'MSC.png', link: 'https://www.facebook.com/APCMSC' }, 
-    { src: 'BAND.png', link: 'https://www.facebook.com/theapcband' },
+    { src: 'Band.png', link: 'https://www.facebook.com/theapcband' },
     { src: 'SOAR.png', link: 'https://www.facebook.com/APCSOAR' },
     { src: 'GG.png', link: 'https://www.facebook.com/APCGamingGenesis' },
     { src: 'JISSA.png', link: 'https://www.facebook.com/APC.JISSA' }, 
@@ -408,7 +408,7 @@ if (p === 1) {
     link.target = '_blank';
     link.rel = 'noreferrer noopener';
     const img = document.createElement('img');
-    img.src = `assets/Images/Logo/APC.png`;
+    img.src = `assets/Images/LOGO/APC.png`;
     img.className = 'apc';
     img.alt = 'apc seal';
     
