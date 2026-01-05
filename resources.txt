@@ -1,0 +1,117 @@
+===============================================
+RESOURCES & CREDITS
+Qelvin's Scrapbook Portfolio
+===============================================
+
+LIBRARIES & FRAMEWORKS
+-----------------------
+• GSAP (GreenSock Animation Platform)
+  https://greensock.com/gsap/
+  Used for scroll-based page flip animations
+
+• GSAP ScrollTrigger Plugin
+  https://greensock.com/scrolltrigger/
+  Used for triggering animations on scroll
+
+
+FONTS
+-----------------------
+• Handlee (Google Fonts)
+  https://fonts.google.com/specimen/Handlee
+  Handwritten style font for scrapbook aesthetic
+
+• Handelson Four
+  https://www.freefontdownload.org/
+  Additional decorative font
+
+
+CDN SOURCES
+-----------------------
+• GSAP Core Library
+  https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js
+
+• ScrollTrigger Plugin
+  https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js
+
+• Google Fonts API
+  https://fonts.googleapis.com/css2?family=Handlee&display=swap
+
+
+IMAGES & GRAPHICS
+-----------------------
+• Personal Photos - Owned by Qelvin Joszeler D. Nagales
+
+• Organization Logos:
+  - MSC (Microsoft Community)
+  - APC Band
+  - SOAR
+  - Gaming Genesis
+  - JISSA
+  - JPCS
+  - BRIDGE
+  - SoCIT
+
+• Doodles & Stickers - Decorative elements
+
+• Skill Logos:
+  HTML, CSS, JavaScript, Python, Java, MySQL,
+  Figma, Canva, MS Office, React, etc.
+
+
+INSPIRATION & TUTORIALS
+-----------------------
+• 3D Book Flip Effect
+  https://codepen.io/jh3y
+  Original concept by @jh3y on CodePen
+
+• CSS 3D Transforms Documentation
+  https://developer.mozilla.org/en-US/docs/Web/CSS/transform-style
+
+• GSAP Official Documentation
+  https://greensock.com/docs/
+
+
+AI ASSISTANCE
+-----------------------
+• GitHub Copilot (Claude)
+  https://github.com/features/copilot
+  Used for code generation and debugging
+
+• AI Queries Used For:
+  - GSAP scroll-based animations
+  - CSS 3D book flip effect
+  - JavaScript dynamic page generation
+  - Image lightbox/modal functionality
+  - Responsive design
+  - HTML/CSS validation fixes
+
+
+DEVELOPMENT TOOLS
+-----------------------
+• Visual Studio Code
+  https://code.visualstudio.com/
+
+• Live Server Extension
+  For local development
+
+• Chrome DevTools
+  For testing and debugging
+
+
+VALIDATION TOOLS
+-----------------------
+• W3C HTML Validator
+  https://validator.w3.org/
+
+• W3C CSS Validator
+  https://jigsaw.w3.org/css-validator/
+
+• Mobile Responsive Testing
+  http://www.responsinator.com/
+
+
+===============================================
+Created for WEBPROG Midterms
+Instructor: Mr. Quesada
+© 2026 Qelvin Joszeler D. Nagales
+===============================================

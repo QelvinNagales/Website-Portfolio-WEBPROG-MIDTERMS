@@ -56,7 +56,7 @@ const DEMOS = [
    - Lower index = on top of the stack
 ============================================ */
 const book = document.getElementById('book');
-const PAGES = 15; // 15 page elements  → 30 content sides (change this to add/remove pages)
+const PAGES = 10; // 10 page elements  → 20 content sides (change this to add/remove pages)
 // Dynamically set page count for CSS calculations
 document.documentElement.style.setProperty('--page-count', PAGES * 2);
 
@@ -451,27 +451,6 @@ if (p === 1) {
     img.addEventListener('mouseleave', () => {
       gsap.to(img, { scale: 1, rotation: 0, duration: 0.3, ease: 'power2.out' });
     });
-    img.addEventListener('click', () => openModal(img.src));
-    link.appendChild(img);
-    frontHalf.appendChild(link);
-  }
-
-  if (p === 3) {
-    const demo = DEMOS[idx1];
-    const link = document.createElement('a');
-    link.target = '_blank';
-    link.rel = 'noreferrer noopener';
-    const img = document.createElement('img');
-    img.src = `assets/Images/Friends/img (10).jpg`;
-    img.className = 'sponty-pic2';
-    img.alt = 'sponty-pic2';
-    img.addEventListener('mouseenter', () => {
-      gsap.to(img, { scale: 1.15, rotation: 0, duration: 0.3, ease: 'power2.out' });
-    });
-    img.addEventListener('mouseleave', () => {
-      gsap.to(img, { scale: 1, rotation: 0, duration: 0.3, ease: 'power2.out' });
-    });
-    img.addEventListener('click', () => openModal(img.src));
     link.appendChild(img);
     frontHalf.appendChild(link);
   }
@@ -483,6 +462,25 @@ if (p === 1) {
     link.rel = 'noreferrer noopener';
     const img = document.createElement('img');
     img.src = `assets/Images/Friends/img (8).jpg`;
+    img.className = 'sponty-pic2';
+    img.alt = 'sponty-pic2';
+    img.addEventListener('mouseenter', () => {
+      gsap.to(img, { scale: 1.15, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('mouseleave', () => {
+      gsap.to(img, { scale: 1, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    link.appendChild(img);
+    frontHalf.appendChild(link);
+  }
+
+  if (p === 3) {
+    const demo = DEMOS[idx1];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/Friends/img (10).jpg`;
     img.className = 'sponty-pic3';
     img.alt = 'sponty-pic3';
     img.addEventListener('mouseenter', () => {
@@ -491,10 +489,73 @@ if (p === 1) {
     img.addEventListener('mouseleave', () => {
       gsap.to(img, { scale: 1, rotation: 0, duration: 0.3, ease: 'power2.out' });
     });
-    img.addEventListener('click', () => openModal(img.src));
     link.appendChild(img);
     frontHalf.appendChild(link);
   }
+
+  // ========== PAGE 7 (p=3 front) SUBTLE DECORATIONS ==========
+  if (p === 3) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Heart1.png';
+    img.className = 'heart-p7';
+    img.alt = 'heart';
+    frontHalf.appendChild(img);
+  }
+  if (p === 3) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Spark3.png';
+    img.className = 'spark-p7';
+    img.alt = 'spark';
+    frontHalf.appendChild(img);
+  }
+
+  //9th page
+  if (p === 4) {
+    const img = document.createElement('img');
+    img.src = `assets/Images/Doodles and stickers/Tear1.png`;
+    img.className = 'tear1';
+    img.alt = 'tear';
+    frontHalf.appendChild(img);
+  }
+  if (p === 4) {
+    const img = document.createElement('img');
+    img.src = `assets/Images/Doodles and stickers/FEMINISM.jpg`;
+    img.className = 'feminism';
+    img.alt = 'feminism';
+    frontHalf.appendChild(img);
+  }
+  if (p === 4) {
+    const img = document.createElement('img');
+    img.src = `assets/Images/Doodles and stickers/EARPHONES.png`;
+    img.className = 'ephones';
+    img.alt = 'ephones';
+    frontHalf.appendChild(img);
+  }
+
+  if (p === 4) {
+    const img = document.createElement('img');
+    img.src = `assets/Images/Doodles and stickers/TOTEBAG.png`;
+    img.className = 'totebag';
+    img.alt = 'totebag';
+    frontHalf.appendChild(img);
+  }
+
+  // ========== PAGE 9 (p=4 front) SUBTLE DECORATIONS ==========
+  if (p === 4) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Spark5.png';
+    img.className = 'spark-p9';
+    img.alt = 'spark';
+    frontHalf.appendChild(img);
+  }
+  if (p === 4) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Cherry.png';
+    img.className = 'cherry-p9';
+    img.alt = 'cherry';
+    frontHalf.appendChild(img);
+  }
+  
   // ========== END OF FRONT PAGE CONTENT ==========
   const pageNum1 = document.createElement('span');
   pageNum1.className = 'page__number';
@@ -835,7 +896,7 @@ if (p === 1) {
     img.className = 'kalbo';
     img.alt = 'kalbo';
     img.addEventListener('mouseenter', () => {
-      gsap.to(img, { scale: 1.15, rotation: 5, duration: 0.3, ease: 'power2.out' });
+      gsap.to(img, { scale: 1.15, rotation: 0, duration: 0.3, ease: 'power2.out' });
     });
     img.addEventListener('mouseleave', () => {
       gsap.to(img, { scale: 1, rotation: 0, duration: 0.3, ease: 'power2.out' });
@@ -858,6 +919,12 @@ if (p === 1) {
     img.src = `assets/Images/ME/Lean.png`;
     img.className = 'lean';
     img.alt = 'lean';
+    img.addEventListener('mouseenter', () => {
+      gsap.to(img, { scale: 1.15, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('mouseleave', () => {
+      gsap.to(img, { scale: 1, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
     link.appendChild(img);
     backHalf.appendChild(link);
   }
@@ -881,6 +948,12 @@ if (p === 1) {
     img.src = `assets/Images/Doodles and stickers/Cat.png`;
     img.className = 'cat';
     img.alt = 'cat';
+    img.addEventListener('mouseenter', () => {
+      gsap.to(img, { scale: 1.15, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('mouseleave', () => {
+      gsap.to(img, { scale: 1, rotation: -15, duration: 0.3, ease: 'power2.out' });
+    });
     link.appendChild(img);
     backHalf.appendChild(link);
   }
@@ -937,6 +1010,572 @@ if (p === 1) {
     backHalf.appendChild(textContainer);
   }
 
+  // ========== PAGE 6 (p=2 back) SUBTLE DECORATIONS ==========
+  if (p === 2) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Star.png';
+    img.className = 'star-p6';
+    img.alt = 'star';
+    backHalf.appendChild(img);
+  }
+  if (p === 2) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Spark2.png';
+    img.className = 'spark-p6';
+    img.alt = 'spark';
+    backHalf.appendChild(img);
+  }
+
+  //8th page - BACK SIDE
+  if (p === 3) {
+    const demo = DEMOS[idx2];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/Doodles and stickers/Like.png`;
+    img.className = 'like';
+    img.alt = 'like';
+    img.addEventListener('mouseenter', () => {
+      gsap.to(img, { scale: 1.15, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('mouseleave', () => {
+      gsap.to(img, { scale: 1, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    link.appendChild(img);
+    backHalf.appendChild(link);
+  }
+  if (p === 3) {
+    const textContainer = document.createElement('div');
+    textContainer.className = 'like-container';
+    textContainer.innerHTML = `<h2 class="likes">MY FAVORITES</h2>`;
+    backHalf.appendChild(textContainer);
+  }
+  if (p === 3) {
+    const img = document.createElement('img');
+    img.src = `assets/Images/Doodles and stickers/Tear2.png`;
+    img.className = 'tear2';
+    img.alt = 'tear2';
+    backHalf.appendChild(img);
+  }
+  if (p === 3) {
+    const demo = DEMOS[idx2];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/Doodles and stickers/CHEESE.png`;
+    img.className = 'cheese';
+    img.alt = 'cheese';
+    link.appendChild(img);
+    backHalf.appendChild(link);
+  }
+
+  if (p === 3) {
+    const demo = DEMOS[idx2];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/Doodles and stickers/BED.png`;
+    img.className = 'bed';
+    img.alt = 'bed';
+    link.appendChild(img);
+    backHalf.appendChild(link);
+  }
+
+  if (p === 3) {
+    const demo = DEMOS[idx2];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/Doodles and stickers/CLAIRO.png`;
+    img.className = 'clairo';
+    img.alt = 'clairo';
+    link.appendChild(img);
+    backHalf.appendChild(link);
+  }
+  if (p === 3) {
+    const demo = DEMOS[idx2];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/Doodles and stickers/MATCHA.png`;
+    img.className = 'matcha';
+    img.alt = 'matcha';
+    link.appendChild(img);
+    backHalf.appendChild(link);
+  }
+if (p === 3) {
+    const demo = DEMOS[idx2];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/Doodles and stickers/QZIP.png`;
+    img.className = 'qzip';
+    img.alt = 'qzip';
+    link.appendChild(img);
+    backHalf.appendChild(link);
+  }
+  if (p === 3) {
+    const demo = DEMOS[idx2];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/Doodles and stickers/Flowers2.png`;
+    img.className = 'flowers2';
+    img.alt = 'flowers2';
+    link.appendChild(img);
+    backHalf.appendChild(link);
+  }
+
+  // ========== PAGE 8 (p=3 back) SUBTLE DECORATIONS ==========
+  if (p === 3) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Spark1.png';
+    img.className = 'spark-p8';
+    img.alt = 'spark';
+    backHalf.appendChild(img);
+  }
+  if (p === 3) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Star.png';
+    img.className = 'star-p8';
+    img.alt = 'star';
+    backHalf.appendChild(img);
+  }
+
+  if (p === 4) {
+    const textContainer = document.createElement('div');
+    textContainer.className = 'happiness';
+    textContainer.innerHTML = 
+    `<h2 class="happy">MY HAPPINESS</h2>
+    <p class="gf">MY GIRLFRIEND</p>`;
+    backHalf.appendChild(textContainer);
+  }
+  if (p === 4) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Tear3.png';
+    img.className = 'tear3';
+    img.alt = 'tear3';
+    backHalf.appendChild(img);
+  }
+  if (p === 4) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Tear1.png';
+    img.className = 'tear1p2';
+    img.alt = 'tear1p2';
+    backHalf.appendChild(img);
+
+  } if (p === 4) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Tear3.png';
+    img.className = 'tear3p2';
+    img.alt = 'tear3';
+    backHalf.appendChild(img);
+  }
+  if (p === 4) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/flower3.png';
+    img.className = 'flowers3';
+    img.alt = 'flowers3';
+    backHalf.appendChild(img);
+  }
+  if (p === 4) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/flower3.png';
+    img.className = 'flowers3p2';
+    img.alt = 'flowers3';
+    backHalf.appendChild(img);
+  }
+  if (p === 4) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Gwen/crop.png';
+    img.className = 'gwen1';
+    img.alt = 'shades';
+    backHalf.appendChild(img);
+  }
+  if (p === 4) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Spark4.png';
+    img.className = 'spark4';
+    img.alt = 'spark4';
+    backHalf.appendChild(img);
+  }
+  if (p === 4) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/flowers4.png';
+    img.className = 'flowers4';
+    img.alt = 'flowers4';
+    backHalf.appendChild(img);
+  }
+
+  // ========== PAGE 11 (p=5 front) BACKGROUND ==========
+  if (p === 5) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/flower3.png';
+    img.className = 'flowers3';
+    img.alt = 'flowers3';
+    frontHalf.appendChild(img);
+  }
+  if (p === 5) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Spark4.png';
+    img.className = 'spark4';
+    img.alt = 'spark4';
+    frontHalf.appendChild(img);
+  }
+  if (p === 5) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Tear3.png';
+    img.className = 'tear3';
+    img.alt = 'tear3';
+    frontHalf.appendChild(img);
+  }
+  if (p === 5) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Cherry.png';
+    img.className = 'cherry-deco';
+    img.alt = 'cherry';
+    frontHalf.appendChild(img);
+  }
+  if (p === 5) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Spark1.png';
+    img.className = 'spark1-deco';
+    img.alt = 'spark1';
+    frontHalf.appendChild(img);
+  }
+
+  // ========== PAGE 12 (p=5 back) BACKGROUND ==========
+  if (p === 5) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/flower3.png';
+    img.className = 'flowers3p2';
+    img.alt = 'flowers3';
+    backHalf.appendChild(img);
+  }
+  if (p === 5) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Tear3.png';
+    img.className = 'tear3p2';
+    img.alt = 'tear3';
+    backHalf.appendChild(img);
+  }
+  if (p === 5) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/flowers4.png';
+    img.className = 'flowers4';
+    img.alt = 'flowers4';
+    backHalf.appendChild(img);
+  }
+  if (p === 5) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Crown.png';
+    img.className = 'crown-deco';
+    img.alt = 'crown';
+    backHalf.appendChild(img);
+  }
+  if (p === 5) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Heart1.png';
+    img.className = 'heart1-deco';
+    img.alt = 'heart';
+    backHalf.appendChild(img);
+  }
+  if (p === 5) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Arrow.png';
+    img.className = 'arrow-deco';
+    img.alt = 'arrow';
+    backHalf.appendChild(img);
+  }
+  // ========== PAGE 12 (p=6 front) SPOTIFY & CONTENT ==========
+// ========== PAGE 12 (p=6 front) SPOTIFY GALLERY ==========
+if (p === 5) {
+  const spotifyGallery = document.createElement('div');
+  spotifyGallery.className = 'spotify-gallery-12';
+
+  // Array of your 5 Spotify embed URLs
+  const songs = [
+    "https://open.spotify.com/embed/track/2LlOeW5rVcvl3QcPNPcDus?utm_source=generator", // Example 1
+    "https://open.spotify.com/embed/track/5tlb0AxuzsMWL2GtEppXGX?utm_source=generator", // Example 2
+    "https://open.spotify.com/embed/track/1ytElsSPsJ1GBqMfPYydRX?utm_source=generator", // Example 3
+    "https://open.spotify.com/embed/track/312z6PZ8wwREck8613PkJk?utm_source=generator", // Example 4
+    "https://open.spotify.com/embed/album/2T523YMzbCSM86LYZDCZLI?utm_source=generator"  // Example 5
+  ];
+
+  songs.forEach((link) => {
+    const iframe = document.createElement('iframe');
+    iframe.src = link;
+    iframe.width = "100%";
+    iframe.height = "80"; // Using compact players to fit 5 on one page
+    iframe.frameBorder = "0";
+    iframe.allow = "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
+    iframe.loading = "lazy";
+    iframe.style.borderRadius = "12px";
+    iframe.style.marginBottom = "10px";
+
+    spotifyGallery.appendChild(iframe);
+  });
+
+  backHalf.appendChild(spotifyGallery);
+}
+
+if (p === 5) {
+  const textContainer = document.createElement('div');
+  textContainer.className = 'music-container';
+  textContainer.innerHTML = `<h2 class="musicc">FAVORITE SONGS</h2>`;
+  backHalf.appendChild(textContainer);
+}
+  
+// ========== PAGE 11 (p=5 front) PHOTO GRID ==========
+if (p === 5) {
+  const grid = document.createElement('div');
+  grid.className = 'photo-grid-11';
+  
+  const flowerImages = [
+    { src: 'flower1.jpg' },
+    { src: 'flower2.jpg' },
+    { src: 'flower3.jpg' },
+    { src: 'flower4.jpg' }
+  ];
+  
+  flowerImages.forEach(({ src }) => {
+    const img = document.createElement('img');
+    img.src = `assets/Images/Gwen/${src}`;
+    img.className = 'photo-grid-img-11';
+    img.alt = 'Flower photo';
+    
+    // Keeping the modal functionality if you have it
+    img.addEventListener('click', () => openModal(img.src));
+    
+    grid.appendChild(img);
+  });
+  
+  frontHalf.appendChild(grid);
+}
+
+  // ========== PAGE 13 (p=6 front) BACKGROUND ==========
+  if (p === 6) {
+    // Decorative elements
+    const img1 = document.createElement('img');
+    img1.src = 'assets/Images/Doodles and stickers/Spark4.png';
+    img1.className = 'spark4';
+    img1.alt = 'spark4';
+    frontHalf.appendChild(img1);
+    const img2 = document.createElement('img');
+    img2.src = 'assets/Images/Doodles and stickers/Tear1.png';
+    img2.className = 'tear1p2';
+    img2.alt = 'tear1';
+    frontHalf.appendChild(img2);
+    const img3 = document.createElement('img');
+    img3.src = 'assets/Images/Doodles and stickers/flower3.png';
+    img3.className = 'flowers3';
+    img3.alt = 'flowers3';
+    frontHalf.appendChild(img3);
+  }
+
+  if (p === 6) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Gwen/couple2.png';
+    img.className = 'couple2';
+    img.alt = 'couple2';
+    frontHalf.appendChild(img);
+  }
+  // ========== PAGE 14 (p=6 back) BACKGROUND ==========
+  if (p === 6) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Tear3.png';
+    img.className = 'tear3p2';
+    img.alt = 'tear3';
+    backHalf.appendChild(img);
+  }
+  if (p === 6) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/flowers4.png';
+    img.className = 'flowers4';
+    img.alt = 'flowers4';
+    backHalf.appendChild(img);
+  }
+  if (p === 6) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/flower3.png';
+    img.className = 'flowers3p2';
+    img.alt = 'flowers3';
+    backHalf.appendChild(img);
+  }
+  if (p === 6) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Spark2.png';
+    img.className = 'spark2-deco';
+    img.alt = 'spark2';
+    backHalf.appendChild(img);
+  }
+  if (p === 6) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Music2.png';
+    img.className = 'music2-deco';
+    img.alt = 'music2';
+    backHalf.appendChild(img);
+  }
+  if (p === 6) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/COJ.png';
+    img.className = 'coj-deco';
+    img.alt = 'coj';
+    backHalf.appendChild(img);
+  }
+
+  // ========== PAGE 15 (p=7 front) BACKGROUND ==========
+  if (p === 7) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/flower3.png';
+    img.className = 'flowers3';
+    img.alt = 'flowers3';
+    frontHalf.appendChild(img);
+  }
+  if (p === 7) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Spark4.png';
+    img.className = 'spark4';
+    img.alt = 'spark4';
+    frontHalf.appendChild(img);
+  }
+  if (p === 7) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Tear3.png';
+    img.className = 'tear3';
+    img.alt = 'tear3';
+    frontHalf.appendChild(img);
+  }
+  if (p === 7) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/flowers4.png';
+    img.className = 'flowers4';
+    img.alt = 'flowers4';
+    frontHalf.appendChild(img);
+  }
+  if (p === 7) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Flowers1.png';
+    img.className = 'flowers1-deco';
+    img.alt = 'flowers1';
+    frontHalf.appendChild(img);
+  }
+  if (p === 7) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Trophy.png';
+    img.className = 'trophy-deco';
+    img.alt = 'trophy';
+    frontHalf.appendChild(img);
+  }
+  if (p === 7) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Spark3.png';
+    img.className = 'spark3-deco';
+    img.alt = 'spark3';
+    frontHalf.appendChild(img);
+  }
+  if (p === 7) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Curly.png';
+    img.className = 'curly-deco';
+    img.alt = 'curly';
+    frontHalf.appendChild(img);
+  }
+  if (p === 7) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Arrow2.png';
+    img.className = 'arrow2-deco';
+    img.alt = 'arrow2';
+    frontHalf.appendChild(img);
+  }
+  if (p === 7) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Flowers5.png';
+    img.className = 'flowers5-deco';
+    img.alt = 'flowers5';
+    frontHalf.appendChild(img);
+  }
+  if (p === 7) {
+    const img = document.createElement('img');
+    img.src = 'assets/Images/Doodles and stickers/Spark5.png';
+    img.className = 'spark5-deco';
+    img.alt = 'spark5';
+    frontHalf.appendChild(img);
+  }
+  
+  // ========== RESOURCES PAGE (Page 13 Front) ==========
+  if (p === 9) {
+    const resourcesContainer = document.createElement('div');
+    resourcesContainer.className = 'resources-container';
+    resourcesContainer.innerHTML = `
+      <h2 class="resources-title">Resources & Credits</h2>
+      <div class="resources-content">
+        <p class="resources-section"><strong>Libraries:</strong></p>
+        <p class="resources-item">• GSAP - greensock.com/gsap</p>
+        <p class="resources-item">• ScrollTrigger - greensock.com/scrolltrigger</p>
+        <p class="resources-section"><strong>Fonts:</strong></p>
+        <p class="resources-item">• Handlee - Google Fonts</p>
+        <p class="resources-item">• Handelson Four - freefontdownload.org</p>
+        <p class="resources-section"><strong>Inspiration:</strong></p>
+        <p class="resources-item">• 3D Book Effect by @jh3y - CodePen</p>
+        <p class="resources-item">• MDN Web Docs - CSS 3D Transforms</p>
+      </div>
+    `;
+    frontHalf.appendChild(resourcesContainer);
+  }
+
+  // ========== RESOURCES PAGE (Page 13 Back) ==========
+  if (p === 9) {
+    const resourcesContainer2 = document.createElement('div');
+    resourcesContainer2.className = 'resources-container';
+    resourcesContainer2.innerHTML = `
+      <h2 class="resources-title">AI & Tools</h2>
+      <div class="resources-content">
+        <p class="resources-section"><strong>AI Assistance:</strong></p>
+        <p class="resources-item">• GitHub Copilot (Claude)</p>
+        <p class="resources-item">• Used for code generation, debugging,</p>
+        <p class="resources-item">  responsive design & validation fixes</p>
+        <p class="resources-section"><strong>Development Tools:</strong></p>
+        <p class="resources-item">• Visual Studio Code</p>
+        <p class="resources-item">• Live Server Extension</p>
+        <p class="resources-item">• Chrome DevTools</p>
+        <p class="resources-section"><strong>Validators:</strong></p>
+        <p class="resources-item">• W3C HTML/CSS Validators</p>
+      </div>
+    `;
+    backHalf.appendChild(resourcesContainer2);
+  }
+
+  // ========== RESOURCES PAGE (Page 14 Front) ==========
+  if (p === 9) {
+    const resourcesContainer3 = document.createElement('div');
+    resourcesContainer3.className = 'resources-container';
+    resourcesContainer3.innerHTML = `
+      <h2 class="resources-title">Images & Graphics</h2>
+      <div class="resources-content">
+        <p class="resources-section"><strong>Personal Photos:</strong></p>
+        <p class="resources-item">• All photos owned by Qelvin Nagales</p>
+        <p class="resources-section"><strong>Organization Logos:</strong></p>
+        <p class="resources-item">• MSC, APC Band, SOAR, Gaming Genesis</p>
+        <p class="resources-item">• JISSA, JPCS, BRIDGE, SoCIT</p>
+        <p class="resources-section"><strong>Skill Logos:</strong></p>
+        <p class="resources-item">• HTML, CSS, JS, Python, Java, MySQL</p>
+        <p class="resources-item">• Figma, Canva, MS Office, React</p>
+        <p class="resources-section"><strong>Decorative Elements:</strong></p>
+        <p class="resources-item">• Various doodles & stickers</p>
+      </div>
+    `;
+    frontHalf.appendChild(resourcesContainer3);
+  }
+
+  
   // ========== END OF BACK PAGE CONTENT ==========
   const pageNum2 = document.createElement('span');
   pageNum2.className = 'page__number';
@@ -971,6 +1610,21 @@ const { gsap, ScrollTrigger } = window;
 gsap.registerPlugin(ScrollTrigger);
 
 /* ============================================
+   RESPONSIVE SCROLL MULTIPLIER
+   - Adjusts scroll speed based on screen size
+   - Smaller screens = faster page flips
+============================================ */
+function getScrollMultiplier() {
+  const width = window.innerWidth;
+  if (width <= 480) return 0.20;
+  if (width <= 768) return 0.22;
+  if (width <= 1024) return 0.24;
+  return 0.25; // Desktop default
+}
+
+let scrollMultiplier = getScrollMultiplier();
+
+/* ============================================
    BOOK SCALE ANIMATION
    - Book starts at 80% size and scales to 120%
    - Happens during the first 25% of scroll
@@ -982,7 +1636,7 @@ gsap.to('.book', {
   scrollTrigger: {
     scrub: 1,        // Smooth scroll-linked animation
     start: () => 0,  // Start at top of page
-    end: () => window.innerHeight * 0.25  // End after 25% scroll
+    end: () => window.innerHeight * scrollMultiplier  // End after scroll
   },
   scale: 1.2  // Final scale (1.2 = 120%)
 });
@@ -991,8 +1645,8 @@ gsap.to('.book', {
 gsap.to('.logo', {
   scrollTrigger: {
     scrub: true,
-    start: () => 13.5 * (window.innerHeight * 0.25),
-    end: () => 14 * (window.innerHeight * 0.25)
+    start: () => 13.5 * (window.innerHeight * scrollMultiplier),
+    end: () => 14 * (window.innerHeight * scrollMultiplier)
   },
   opacity: 1
 });
@@ -1025,8 +1679,8 @@ pageElements.forEach((page, index) => {
     rotateY: `-=${180 - index / 2}`,  // Rotation amount
     scrollTrigger: {
       scrub: 1,
-      start: () => (index + 1) * (window.innerHeight * 0.25),  // When flip starts
-      end: () => (index + 2) * (window.innerHeight * 0.25)     // When flip ends
+      start: () => (index + 1) * (window.innerHeight * scrollMultiplier),  // When flip starts
+      end: () => (index + 2) * (window.innerHeight * scrollMultiplier)     // When flip ends
     }
   });
 
@@ -1036,10 +1690,24 @@ pageElements.forEach((page, index) => {
     z: index === 0 ? -13 : index,
     scrollTrigger: {
       scrub: 1,
-      start: () => (index + 1) * (window.innerHeight * 0.25),
-      end: () => (index + 1.5) * (window.innerHeight * 0.25)
+      start: () => (index + 1) * (window.innerHeight * scrollMultiplier),
+      end: () => (index + 1.5) * (window.innerHeight * scrollMultiplier)
     }
   });
+});
+
+/* ============================================
+   WINDOW RESIZE HANDLER
+   - Refreshes ScrollTrigger on resize for responsiveness
+   - Debounced to prevent performance issues
+============================================ */
+let resizeTimeout;
+window.addEventListener('resize', () => {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(() => {
+    scrollMultiplier = getScrollMultiplier();
+    ScrollTrigger.refresh();
+  }, 250);
 });
 
 /* ============================================
@@ -1060,7 +1728,7 @@ window.addEventListener('scroll', () => {
   const scrollTop = window.scrollY;
   // Adjust end point to match last page flip (before back cover)
   const totalPages = PAGES + 1; // All pages except back cover
-  const endPoint = totalPages * (window.innerHeight * 0.25);
+  const endPoint = totalPages * (window.innerHeight * scrollMultiplier);
   const scrollPercent = Math.min((scrollTop / endPoint) * 100, 100);
   
   if (progressBar) {
