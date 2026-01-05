@@ -315,16 +315,6 @@ img {
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
-.kalbo{
-  width: 50%;
-  height: auto;
-  top: 40%;
-  left: -40%;
-  rotate: 90deg;
-  
-}
-
 .title{
   width: auto;
   height: auto;
@@ -983,7 +973,7 @@ img {
   pointer-events: none;
 }
 .arsenal{
- position: absolute;
+  position: absolute;
   bottom: 85%;
   left: 58%;
   transform: translateX(-50%);
@@ -1079,7 +1069,7 @@ img {
   filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.6));
 }
 .projs{
- position: absolute;
+  position: absolute;
   bottom: 85%;
   left: 58%;
   transform: translateX(-50%);
@@ -1222,4 +1212,175 @@ img {
   left: 70%;
   cursor: pointer;
   rotate: 15deg;
+}
+.funfacts-container {
+  position: absolute;
+  bottom: 83%;
+  left: 57%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 80%;
+  z-index: 10;
+  font-family: 'Handlee', cursive;
+}
+.funfacts-title {
+  font-size: 2.3rem;
+  text-decoration: underline;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin: 0 0 20px 0;
+  font-family: 'Handlee', cursive;
+}
+.kalbo{
+  position: fixed;
+  width:18%;
+  height: auto;
+  top: 10%;
+  left: 13%;
+}
+.lean{
+  position: fixed;
+  width: 50%;
+  height: auto;
+  left: 26%;
+  top: 28%;
+  border-radius: 18px;
+  filter: drop-shadow(0 10px 15px rgba(90, 236, 224, 0.6));
+}
+.pres-container {
+  position: absolute;
+  bottom: 65%;
+  left: 70%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 65%;
+  z-index: 10;
+  font-family: 'Handlee', cursive;
+  font-weight: bolder;
+}
+.pres{
+  font-size: 1.5rem;
+  font-weight: bolder;
+    color: #000000;
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Handlee', cursive;
+    text-align: center;
+}
+.cat{
+  position: fixed;
+  width: 50%;
+  height: auto;
+  top: 80%;
+  left: 30%;
+  rotate: -15deg;
+  filter: drop-shadow(0 10px 15px rgba(93, 223, 19, 0.6));
+}
+.cat-text-container {
+  position: absolute;
+  bottom: 9%;
+  left: 70%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 70%;
+  z-index: 10;
+  font-family: 'Handlee', cursive;
+  font-weight: bolder;
+}
+.cat1{
+  font-size: 1.2rem;
+  font-weight: bolder;
+    color: #000000;
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Handlee', cursive;
+    text-align: center;
+}
+
+.singing{
+  position: fixed;
+  width: 50%;
+  height: auto;
+  top: 59%;
+  left: 78%;
+  rotate: 15deg;
+  filter: drop-shadow(0 10px 15px rgba(186, 231, 62, 0.6));
+}
+
+.singing2{
+  position: fixed;
+  width: 100%;
+  height: auto;
+  top: 40%;
+  left: 63%;
+  rotate: -27deg;
+  filter: drop-shadow(0 10px 15px rgba(231, 62, 127, 0.6));
+}
+.singing-text-container{
+  position: absolute;
+  bottom: 35%;
+  left: 25%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 75%;
+  z-index: 10;
+  font-family: 'Handlee', cursive;
+  font-weight: bolder;
+}
+.sing{
+  font-size: 1.5rem;
+  font-weight: bolder;
+    color: #000000;
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Handlee', cursive;
+    text-align: center;
+}
+.sponty{
+  position: absolute;
+  bottom: 67%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: justify;
+  width: 97%;
+  z-index: 10;
+  font-family: 'Handlee', cursive;
+  font-weight: bolder;
+}
+.sponty-title{
+  font-size: 22.5px;
+  text-align: justify;
+  font-weight: bolder;
+    color: #000000;
+    margin: 0;
+    line-height: 1.6;
+    font-family: 'Handlee', cursive;
+    text-align: center;
+}
+.sponty-pic{
+  position: fixed;
+  border-radius: 10px;
+  width: 45%;
+  height: auto;
+  top: 45%;
+  left: 26%;
+  filter: drop-shadow(0 10px 15px rgba(48, 48, 48, 0.6));
+}
+.sponty-pic2{
+  position: fixed;
+  border-radius: 10px;
+  width: 47%;
+  height: 22%;
+  top: 45%;
+  left: 74%;
+  filter: drop-shadow(0 10px 15px rgba(48, 48, 48, 0.6));
+}
+.sponty-pic3{
+  position: fixed;
+  border-radius: 10px;
+  width: 80%;
+  height: auto;
+  top: 74%;
+  left: 50%;
+  filter: drop-shadow(0 10px 15px rgba(48, 48, 48, 0.6));
 }

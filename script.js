@@ -396,8 +396,104 @@ if (p === 1) {
   if (p === 2) {
     const textContainer = document.createElement('div');
     textContainer.className = 'socit-text';
-    textContainer.innerHTML = `<p2 class="socit-desc">SOCIT MERCHANDISE</p2>`;
+    textContainer.innerHTML = `<p2 class="socit-desc">SOCIT MERCHANDISE(in progress...)</p2>`;
     frontHalf.appendChild(textContainer);
+  }
+
+  //7th page
+  if (p === 3) {
+    const demo = DEMOS[idx1];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/ME/Kalbo.png`;
+    img.className = 'kalbo';
+    img.alt = 'kalbo';
+    img.addEventListener('mouseenter', () => {
+      gsap.to(img, { scale: 1.15, rotation: 5, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('mouseleave', () => {
+      gsap.to(img, { scale: 1, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    link.appendChild(img);
+    frontHalf.appendChild(link);
+  }
+  if (p === 3) {
+    const textContainer = document.createElement('div');
+    textContainer.className = 'funfacts-container';
+    textContainer.innerHTML = `<h2 class="funfacts-title">Fun Facts about Me</h2>`;
+    frontHalf.appendChild(textContainer);
+  }
+
+  if (p === 3) {
+    const textContainer = document.createElement('div');
+    textContainer.className = 'sponty';
+    textContainer.innerHTML = `
+      <p class="sponty-title">I am a very spontaneous person.</p>
+      <p class="sponty-title">I tend to do things without planning it first.</p>
+      <p class="sponty-title">I like to go out and hang out with my friends.</p>`;
+    frontHalf.appendChild(textContainer); 
+  }
+
+  if (p === 3) {
+    const demo = DEMOS[idx1];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/Friends/img (7).jpg`;
+    img.className = 'sponty-pic';
+    img.alt = 'sponty-pic';
+    img.addEventListener('mouseenter', () => {
+      gsap.to(img, { scale: 1.15, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('mouseleave', () => {
+      gsap.to(img, { scale: 1, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('click', () => openModal(img.src));
+    link.appendChild(img);
+    frontHalf.appendChild(link);
+  }
+
+  if (p === 3) {
+    const demo = DEMOS[idx1];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/Friends/img (10).jpg`;
+    img.className = 'sponty-pic2';
+    img.alt = 'sponty-pic2';
+    img.addEventListener('mouseenter', () => {
+      gsap.to(img, { scale: 1.15, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('mouseleave', () => {
+      gsap.to(img, { scale: 1, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('click', () => openModal(img.src));
+    link.appendChild(img);
+    frontHalf.appendChild(link);
+  }
+
+  if (p === 3) {
+    const demo = DEMOS[idx1];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/Friends/img (8).jpg`;
+    img.className = 'sponty-pic3';
+    img.alt = 'sponty-pic3';
+    img.addEventListener('mouseenter', () => {
+      gsap.to(img, { scale: 1.15, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('mouseleave', () => {
+      gsap.to(img, { scale: 1, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('click', () => openModal(img.src));
+    link.appendChild(img);
+    frontHalf.appendChild(link);
   }
   // ========== END OF FRONT PAGE CONTENT ==========
   const pageNum1 = document.createElement('span');
@@ -728,6 +824,120 @@ if (p === 1) {
     
     backHalf.appendChild(grid);
   }
+  //6th page - BACK SIDE
+  if (p === 2) {
+    const demo = DEMOS[idx2];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/ME/Kalbo.png`;
+    img.className = 'kalbo';
+    img.alt = 'kalbo';
+    img.addEventListener('mouseenter', () => {
+      gsap.to(img, { scale: 1.15, rotation: 5, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('mouseleave', () => {
+      gsap.to(img, { scale: 1, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    link.appendChild(img);
+    backHalf.appendChild(link);
+  }
+  if (p === 2) {
+    const textContainer = document.createElement('div');
+    textContainer.className = 'funfacts-container';
+    textContainer.innerHTML = `<h2 class="funfacts-title">Fun Facts about Me</h2>`;
+    backHalf.appendChild(textContainer);
+  }
+  if (p === 2) {
+    const demo = DEMOS[idx2];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/ME/Lean.png`;
+    img.className = 'lean';
+    img.alt = 'lean';
+    link.appendChild(img);
+    backHalf.appendChild(link);
+  }
+
+  if (p === 2) {
+    const textContainer = document.createElement('div');
+    textContainer.className = 'pres-container';
+    textContainer.innerHTML = `
+      <p class="pres1">President of</p>
+      <p class="pres1">APC - Microsoft Community</p>
+      <p class="pres1">S.Y. 2025 - 2026</p>`;
+    backHalf.appendChild(textContainer);
+  }
+
+  if (p === 2) {
+    const demo = DEMOS[idx2];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/Doodles and stickers/Cat.png`;
+    img.className = 'cat';
+    img.alt = 'cat';
+    link.appendChild(img);
+    backHalf.appendChild(link);
+  }
+  if (p === 2) {
+    const textContainer = document.createElement('div');
+    textContainer.className = 'cat-text-container';
+    textContainer.innerHTML = `
+      <p class="cat1">We have 13 adopted cats</p>
+      <p class="cat1">in our house</p>`;
+    backHalf.appendChild(textContainer);
+  }
+
+  if (p === 2) {
+    const textContainer = document.createElement('div');
+    textContainer.className = 'cat-text-container';
+    textContainer.innerHTML = `
+      <p class="cat1">We have 13 adopted cats</p>
+      <p class="cat1">in our house</p>`;
+    backHalf.appendChild(textContainer);
+  }
+
+  if (p === 2) {
+    const demo = DEMOS[idx2];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/ME/singing.png`;
+    img.className = 'singing';
+    img.alt = 'singing';
+    link.appendChild(img);
+    backHalf.appendChild(link);
+  }
+
+  if (p === 2) {
+    const demo = DEMOS[idx2];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/ME/singing2.png`;
+    img.className = 'singing2';
+    img.alt = 'singing2';
+    link.appendChild(img);
+    backHalf.appendChild(link);
+  }
+
+  if (p === 2) {
+    const textContainer = document.createElement('div');
+    textContainer.className = 'singing-text-container';
+    textContainer.innerHTML = `
+      <p class="sing">I am a vocalist of</p>
+      <p class="sing">the APC Band</p>`;
+    backHalf.appendChild(textContainer);
+  }
+
+  // ========== END OF BACK PAGE CONTENT ==========
   const pageNum2 = document.createElement('span');
   pageNum2.className = 'page__number';
   pageNum2.textContent = idx2 + 1; // 2, 4, 6...
