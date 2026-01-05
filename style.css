@@ -333,6 +333,7 @@ img {
   height: 90%;
   -o-object-fit: center;
   object-fit: center;
+  object-position: center;
   z-index: 2;
   position: absolute;
   top: 50%;
