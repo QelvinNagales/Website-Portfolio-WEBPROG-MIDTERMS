@@ -1387,131 +1387,65 @@ if (p === 5) {
     img.alt = 'couple2';
     frontHalf.appendChild(img);
   }
-  // ========== PAGE 14 (p=6 back) BACKGROUND ==========
-  if (p === 6) {
+// ========== PAGE 6 BACK SOCIAL MEDIA GALLERY ==========
+if (p === 6) {
+  const gallery = document.createElement('div');
+  gallery.className = 'social-gallery-grid';
+
+  const socialData = [
+    { src: 'FACEBOOK.png', url: 'https://www.facebook.com/Qelvin17' },
+    { src: 'INSTAGRAM.png', url: 'https://www.instagram.com/cupofjosze/' },
+    { src: 'LINKEDIN.png', url: 'https://www.linkedin.com/in/qdnagales/' },
+    { src: 'Github.png', url: 'https://github.com/QelvinNagales' }
+  ];
+
+  socialData.forEach(social => {
+    const anchor = document.createElement('a');
+    anchor.href = social.url;
+    anchor.target = '_blank';
+    anchor.className = 'social-gallery-item';
+
     const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/Tear3.png';
-    img.className = 'tear3p2';
-    img.alt = 'tear3';
-    backHalf.appendChild(img);
-  }
-  if (p === 6) {
-    const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/flowers4.png';
-    img.className = 'flowers4';
-    img.alt = 'flowers4';
-    backHalf.appendChild(img);
-  }
-  if (p === 6) {
-    const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/flower3.png';
-    img.className = 'flowers3p2';
-    img.alt = 'flowers3';
-    backHalf.appendChild(img);
-  }
-  if (p === 6) {
-    const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/Spark2.png';
-    img.className = 'spark2-deco';
-    img.alt = 'spark2';
-    backHalf.appendChild(img);
-  }
-  if (p === 6) {
-    const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/Music2.png';
-    img.className = 'music2-deco';
-    img.alt = 'music2';
-    backHalf.appendChild(img);
-  }
-  if (p === 6) {
-    const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/COJ.png';
-    img.className = 'coj-deco';
-    img.alt = 'coj';
-    backHalf.appendChild(img);
-  }
+    // Using the relative path from your project root
+    img.src = `assets/Images/LOGO/${social.src}`; 
+    img.alt = social.src;
+    img.className = 'social-gallery-img';
+    
+    // Fallback if images fail to load
+    img.onerror = () => {
+      console.error(`Missing Image: ${img.src}`);
+      anchor.innerHTML = `<span style="color:blue; text-decoration:underline;">${social.src.split('.')[0]}</span>`;
+    };
+
+    anchor.appendChild(img);
+    gallery.appendChild(anchor);
+  });
+
+  backHalf.appendChild(gallery);
+}
+
+if (p === 6) {
+  const textContainer = document.createElement('div');
+  textContainer.className = 'connect-container';
+  textContainer.innerHTML = `<h2 class="connect">CONNECT WITH ME</h2>`;
+  backHalf.appendChild(textContainer);
+}
 
   // ========== PAGE 15 (p=7 front) BACKGROUND ==========
   if (p === 7) {
-    const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/flower3.png';
-    img.className = 'flowers3';
-    img.alt = 'flowers3';
-    frontHalf.appendChild(img);
+    const textContainer = document.createElement('div');
+    textContainer.className = 'thankyou-container';
+    textContainer.innerHTML = `<h2 class="thankyou">THANK YOU FOR VIEWING MY PORTFOLIO!</h2>`;
+    frontHalf.appendChild(textContainer);
   }
-  if (p === 7) {
-    const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/Spark4.png';
-    img.className = 'spark4';
-    img.alt = 'spark4';
-    frontHalf.appendChild(img);
+    if (p === 7) {
+    const textContainer = document.createElement('div');
+    textContainer.className = 'to-be-continued-container';
+    textContainer.innerHTML = `<h2 class="tbc">To Be Continued...</h2>`;
+    backHalf.appendChild(textContainer);
   }
-  if (p === 7) {
-    const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/Tear3.png';
-    img.className = 'tear3';
-    img.alt = 'tear3';
-    frontHalf.appendChild(img);
-  }
-  if (p === 7) {
-    const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/flowers4.png';
-    img.className = 'flowers4';
-    img.alt = 'flowers4';
-    frontHalf.appendChild(img);
-  }
-  if (p === 7) {
-    const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/Flowers1.png';
-    img.className = 'flowers1-deco';
-    img.alt = 'flowers1';
-    frontHalf.appendChild(img);
-  }
-  if (p === 7) {
-    const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/Trophy.png';
-    img.className = 'trophy-deco';
-    img.alt = 'trophy';
-    frontHalf.appendChild(img);
-  }
-  if (p === 7) {
-    const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/Spark3.png';
-    img.className = 'spark3-deco';
-    img.alt = 'spark3';
-    frontHalf.appendChild(img);
-  }
-  if (p === 7) {
-    const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/Curly.png';
-    img.className = 'curly-deco';
-    img.alt = 'curly';
-    frontHalf.appendChild(img);
-  }
-  if (p === 7) {
-    const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/Arrow2.png';
-    img.className = 'arrow2-deco';
-    img.alt = 'arrow2';
-    frontHalf.appendChild(img);
-  }
-  if (p === 7) {
-    const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/Flowers5.png';
-    img.className = 'flowers5-deco';
-    img.alt = 'flowers5';
-    frontHalf.appendChild(img);
-  }
-  if (p === 7) {
-    const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/Spark5.png';
-    img.className = 'spark5-deco';
-    img.alt = 'spark5';
-    frontHalf.appendChild(img);
-  }
-  
   // ========== RESOURCES PAGE (Page 13 Front) ==========
-  if (p === 9) {
+  if (p === 8) {
     const resourcesContainer = document.createElement('div');
     resourcesContainer.className = 'resources-container';
     resourcesContainer.innerHTML = `
@@ -1528,8 +1462,9 @@ if (p === 5) {
         <p class="resources-item">• MDN Web Docs - CSS 3D Transforms</p>
       </div>
     `;
-    frontHalf.appendChild(resourcesContainer);
+    backHalf.appendChild(resourcesContainer);
   }
+
 
   // ========== RESOURCES PAGE (Page 13 Back) ==========
   if (p === 9) {
@@ -1539,13 +1474,13 @@ if (p === 5) {
       <h2 class="resources-title">AI & Tools</h2>
       <div class="resources-content">
         <p class="resources-section"><strong>AI Assistance:</strong></p>
-        <p class="resources-item">• GitHub Copilot (Claude)</p>
-        <p class="resources-item">• Used for code generation, debugging,</p>
-        <p class="resources-item">  responsive design & validation fixes</p>
+        <p class="resources-item">• GitHub Copilot</p>
+        <p class="resources-item">• Used for code clarification, debugging,</p>
+        <p class="resources-item">  guidance & validation fixes</p>
         <p class="resources-section"><strong>Development Tools:</strong></p>
         <p class="resources-item">• Visual Studio Code</p>
         <p class="resources-item">• Live Server Extension</p>
-        <p class="resources-item">• Chrome DevTools</p>
+        <p class="resources-item">• Vercel</p>
         <p class="resources-section"><strong>Validators:</strong></p>
         <p class="resources-item">• W3C HTML/CSS Validators</p>
       </div>
