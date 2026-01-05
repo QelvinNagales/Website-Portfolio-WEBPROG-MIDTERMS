@@ -1180,14 +1180,14 @@ if (p === 3) {
   }
   if (p === 4) {
     const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/flower3.png';
+    img.src = 'assets/Images/Doodles and stickers/Flower3.png';
     img.className = 'flowers3';
     img.alt = 'flowers3';
     backHalf.appendChild(img);
   }
   if (p === 4) {
     const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/flower3.png';
+    img.src = 'assets/Images/Doodles and stickers/Flower3.png';
     img.className = 'flowers3p2';
     img.alt = 'flowers3';
     backHalf.appendChild(img);
@@ -1208,16 +1208,16 @@ if (p === 3) {
   }
   if (p === 4) {
     const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/flowers4.png';
-    img.className = 'flowers4';
-    img.alt = 'flowers4';
+    img.src = 'assets/Images/Doodles and stickers/Flowers4.png';
+    img.className = 'Flowers4';
+    img.alt = 'lowers4';
     backHalf.appendChild(img);
   }
 
   // ========== PAGE 11 (p=5 front) BACKGROUND ==========
   if (p === 5) {
     const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/flower3.png';
+    img.src = 'assets/Images/Doodles and stickers/Flower3.png';
     img.className = 'flowers3';
     img.alt = 'flowers3';
     frontHalf.appendChild(img);
@@ -1254,7 +1254,7 @@ if (p === 3) {
   // ========== PAGE 12 (p=5 back) BACKGROUND ==========
   if (p === 5) {
     const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/flower3.png';
+    img.src = 'assets/Images/Doodles and stickers/Flower3.png';
     img.className = 'flowers3p2';
     img.alt = 'flowers3';
     backHalf.appendChild(img);
@@ -1268,7 +1268,7 @@ if (p === 3) {
   }
   if (p === 5) {
     const img = document.createElement('img');
-    img.src = 'assets/Images/Doodles and stickers/flowers4.png';
+    img.src = 'assets/Images/Doodles and stickers/Flowers4.png';
     img.className = 'flowers4';
     img.alt = 'flowers4';
     backHalf.appendChild(img);
@@ -1374,7 +1374,7 @@ if (p === 5) {
     img2.alt = 'tear1';
     frontHalf.appendChild(img2);
     const img3 = document.createElement('img');
-    img3.src = 'assets/Images/Doodles and stickers/flower3.png';
+    img3.src = 'assets/Images/Doodles and stickers/Flower3.png';
     img3.className = 'flowers3';
     img3.alt = 'flowers3';
     frontHalf.appendChild(img3);
