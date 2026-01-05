@@ -1209,8 +1209,8 @@ if (p === 3) {
   if (p === 4) {
     const img = document.createElement('img');
     img.src = 'assets/Images/Doodles and stickers/Flowers4.png';
-    img.className = 'Flowers4';
-    img.alt = 'lowers4';
+    img.className = 'flowers4';
+    img.alt = 'flowers4';
     backHalf.appendChild(img);
   }
 
@@ -1232,7 +1232,7 @@ if (p === 3) {
   if (p === 5) {
     const img = document.createElement('img');
     img.src = 'assets/Images/Doodles and stickers/Tear3.png';
-    img.className = 'tear3';
+    img.className = 'Tear3';
     img.alt = 'tear3';
     frontHalf.appendChild(img);
   }
