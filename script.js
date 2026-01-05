@@ -235,7 +235,170 @@ if (p === 1) {
     
     frontHalf.appendChild(grid);
   }
+  
+  //5th page
+   if (p === 2) {
+    const demo = DEMOS[idx1];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/Doodles and stickers/Skills.png`;
+    img.className = 'skills';
+    img.alt = 'skills';
+    img.addEventListener('mouseenter', () => {
+      gsap.to(img, { scale: 1.15, rotation: 5, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('mouseleave', () => {
+      gsap.to(img, { scale: 1, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    link.appendChild(img);
+    frontHalf.appendChild(link);
+  }
+  if (p === 2) {
+    const textContainer = document.createElement('div');
+    textContainer.className = 'projs';
+    textContainer.innerHTML = `<h2 class="projs-title">My Skills and Projects</h2>`;
+    frontHalf.appendChild(textContainer);
+  }
 
+   if (p === 2) {
+    const demo = DEMOS[idx1];
+    const link = document.createElement('a');
+    link.href = `https://soar-shirt-shop.vercel.app/`;
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/PROJECTS/SOAR-SHIRT.png`;
+    img.className = 'SOAR-proj';
+    img.alt = 'SOAR-proj';
+    img.addEventListener('mouseenter', () => {
+      gsap.to(img, { scale: 1.15, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('mouseleave', () => {
+      gsap.to(img, { scale: 1, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    link.appendChild(img);
+    frontHalf.appendChild(link);
+  }
+
+  if (p === 2) {
+    const demo = DEMOS[idx1];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/PROJECTS/SOAR SHIRT (1).png`;
+    img.className = 'Soarshirt';
+    img.alt = 'Soarshirt';
+    img.addEventListener('mouseenter', () => {
+      gsap.to(img, { scale: 1.15, rotation: 5, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('mouseleave', () => {
+      gsap.to(img, { scale: 1, rotation:10, duration: 0.3, ease: 'power2.out' });
+    });
+    link.appendChild(img);
+    frontHalf.appendChild(link);
+  }
+
+  if (p === 2) {
+    const textContainer = document.createElement('div');
+    textContainer.className = 'Soar-text';
+    textContainer.innerHTML = `<p2 class="soar-desc">SOAR SHIRT ORDERING SYSTEM</p2>`;
+    frontHalf.appendChild(textContainer);
+  }
+  
+  if (p === 2) {
+    const demo = DEMOS[idx1];
+    const link = document.createElement('a');
+    link.href = `https://apcband.vercel.app/`;
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/PROJECTS/APC BAND.png`;
+    img.className = 'Band-proj';
+    img.alt = 'Band-proj';
+    img.addEventListener('mouseenter', () => {
+      gsap.to(img, { scale: 1.15, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('mouseleave', () => {
+      gsap.to(img, { scale: 1, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    link.appendChild(img);
+    frontHalf.appendChild(link);
+  }
+
+  if (p === 2) {
+    const demo = DEMOS[idx1];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/ORGS/Band.png`;
+    img.className = 'Bandcon';
+    img.alt = 'Bandcon';
+    img.addEventListener('mouseenter', () => {
+      gsap.to(img, { scale: 1.15, rotation: 5, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('mouseleave', () => {
+      gsap.to(img, { scale: 1, rotation: -5, duration: 0.3, ease: 'power2.out' });
+    });
+    link.appendChild(img);
+    frontHalf.appendChild(link);
+  }
+
+  if (p === 2) {
+    const textContainer = document.createElement('div');
+    textContainer.className = 'Band-text';
+    textContainer.innerHTML = `<p2 class="Band-desc">APC BAND TICKETING SYSTEM</p2>`;
+    frontHalf.appendChild(textContainer);
+  }
+
+  if (p === 2) {
+    const demo = DEMOS[idx1];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/PROJECTS/SOCIT-MERCH.png`;
+    img.className = 'socit-proj';
+    img.alt = 'socit-proj';
+    img.addEventListener('mouseenter', () => {
+      gsap.to(img, { scale: 1.15, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('mouseleave', () => {
+      gsap.to(img, { scale: 1, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('click', () => openModal(img.src));
+    link.appendChild(img);
+    frontHalf.appendChild(link);
+  }
+
+  if (p === 2) {
+    const demo = DEMOS[idx1];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/PROJECTS/SoCIT Merchs.png`;
+    img.className = 'socitmerchs';
+    img.alt = 'socitmerchs';
+    img.addEventListener('mouseenter', () => {
+      gsap.to(img, { scale: 1.15, rotation: -5, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('mouseleave', () => {
+      gsap.to(img, { scale: 1, rotation: 5  , duration: 0.3, ease: 'power2.out' });
+    });
+    link.appendChild(img);
+    frontHalf.appendChild(link);
+  }
+
+  if (p === 2) {
+    const textContainer = document.createElement('div');
+    textContainer.className = 'socit-text';
+    textContainer.innerHTML = `<p2 class="socit-desc">SOCIT MERCHANDISE</p2>`;
+    frontHalf.appendChild(textContainer);
+  }
   // ========== END OF FRONT PAGE CONTENT ==========
   const pageNum1 = document.createElement('span');
   pageNum1.className = 'page__number';
@@ -500,10 +663,76 @@ if (p === 1) {
     backHalf.appendChild(link);
   }
 
+  //4th page - BACK SIDE
+  if (p === 1) {
+    const demo = DEMOS[idx2];
+    const link = document.createElement('a');
+    link.target = '_blank';
+    link.rel = 'noreferrer noopener';
+    const img = document.createElement('img');
+    img.src = `assets/Images/Doodles and stickers/Skills.png`;
+    img.className = 'skills';
+    img.alt = 'skills';
+    img.addEventListener('mouseenter', () => {
+      gsap.to(img, { scale: 1.15, rotation: 5, duration: 0.3, ease: 'power2.out' });
+    });
+    img.addEventListener('mouseleave', () => {
+      gsap.to(img, { scale: 1, rotation: 0, duration: 0.3, ease: 'power2.out' });
+    });
+    link.appendChild(img);
+    backHalf.appendChild(link);
+  }
+
+  if (p === 1) {
+    const textContainer = document.createElement('div');
+    textContainer.className = 'arsenal';
+    textContainer.innerHTML = `<h2 class="arsenal-title">My Skills and Projects</h2>`;
+    backHalf.appendChild(textContainer);
+  }
+
+  if (p === 1) {
+    const grid = document.createElement('div');
+    grid.className = 'skills-grid';
+    
+    const skillsImage = [
+      { src: 'HTML.png', className: 'Skill-1' },
+      { src: 'CSS.png', className: 'Skill-2' },
+      { src: 'JAVASCRIPT.png', className: 'Skill-3' },
+      { src: 'Python.png', className: 'Skill-4' },
+      { src: 'JAVA.png', className: 'Skill-5' },
+      { src: 'MYSQL.png', className: 'Skill-6' },
+      { src: 'POWERAPPS.png', className: 'Skill-7' },
+      { src: 'SUPABASE.png', className: 'Skill-8' },
+      { src: 'GIT.png', className: 'Skill-9' },
+      { src: 'FLUTTER.png', className: 'Skill-10' },
+      { src: 'REACT.png', className: 'Skill-11' },
+      { src: 'CANVA.png', className: 'Skill-12' },
+      { src: 'WORD.png', className: 'Skill-13' },
+      { src: 'EXCEL.png', className: 'Skill-14' },
+      { src: 'FIGMA.png', className: 'Skill-15' }
+    ];
+    
+    skillsImage.forEach(({ src, className }) => {
+      const img = document.createElement('img');
+      img.src = `assets/Images/LOGO/${src}`;
+      img.className = className;
+      img.alt = 'Skills image';
+      img.addEventListener('mouseenter', () => {
+        gsap.to(img, { scale: 1.15, rotation: 0, duration: 0.5, ease: 'power2.out'});
+      });
+      img.addEventListener('mouseleave', () => {
+        gsap.to(img, { scale: 1, rotation: 0, duration: 0.5, ease: 'power2.out'});
+      });
+      grid.appendChild(img);
+    });
+    
+    backHalf.appendChild(grid);
+  }
   const pageNum2 = document.createElement('span');
   pageNum2.className = 'page__number';
   pageNum2.textContent = idx2 + 1; // 2, 4, 6...
   backHalf.appendChild(pageNum2);
+  
   // ========== END OF BACK PAGE CONTENT ==========
 
   // Add halves to page

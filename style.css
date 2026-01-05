@@ -154,6 +154,7 @@ h1 {
   transform: rotateY(calc(var(--rotation, 0) * 1deg)) translate3d(0, 0, calc((0.5 * var(--coefficient, 0)) * 1px));
   -webkit-clip-path: inset(0 0.5% 0 0.5%);
   clip-path: inset(0 0.5% 0 0.5%);
+  pointer-events: auto;
 }
 
 .page__half--front {
@@ -162,12 +163,14 @@ h1 {
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   border-radius: 0 5% 5% 0;
+  z-index: 2;
 }
 
 .page__half--back {
   --rotation: 180;
   --coefficient: 2;
   border-radius: 5% 0 0 5%;
+  z-index: 1;
 }
 
 /* Book Pages */
@@ -491,6 +494,7 @@ img {
   height: auto;
   top: 40%;
   left: 89%;
+  pointer-events: none;
 }
 
 .star2{
@@ -499,6 +503,7 @@ img {
   height: auto;
   top: 45%;
   left: 75%;
+  pointer-events: none;
 }
 
 .star3{
@@ -507,6 +512,7 @@ img {
   height: auto;
   top: 50%;
   left: 90%;
+  pointer-events: none;
 }
 
 .description{
@@ -565,6 +571,7 @@ img {
   top: 73%;
   left: 95%;
   rotate: -40deg;
+  pointer-events: none;
 }
 
 .hearts{
@@ -574,6 +581,7 @@ img {
   top: 5%;
   left: 65%;
   rotate: -20deg;
+  pointer-events: none;
 }
 
 .pers{
@@ -709,6 +717,7 @@ img {
   height: auto;
   top: 41%;
   left: 10%;
+  pointer-events: none;
 }
 
 /* ============================================
@@ -908,31 +917,6 @@ img {
   margin: 0 auto;
   transform-origin: center center;
 }
-
-.friend-img-1 {
-
-}
-
-.friend-img-2 {
-  /* Top center */
-}
-
-.friend-img-3 {
-  /* Top right */
-}
-
-.friend-img-4 {
-  /* Bottom left */
-}
-
-.friend-img-5 {
-  /* Bottom center */
-}
-
-.friend-img-6 {
-  /* Bottom right */
-}
-
 /* ============================================
    IMAGE POPUP / LIGHTBOX STYLES (Modal)
 ============================================ */
@@ -990,3 +974,252 @@ img {
   opacity: 1;
 }
 
+.skills{
+  position: fixed;
+  width: 15%;
+  height: auto;
+  top: 10%;
+  left: 12%;
+  pointer-events: none;
+}
+.arsenal{
+ position: absolute;
+  bottom: 85%;
+  left: 58%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 70%;
+  z-index: 10;
+  font-family: 'Handlee', cursive;
+}
+
+.arsenal-title{
+  font-size: 30px;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin: 40% 0 0 0;
+  font-family: 'Handlee', cursive;
+}
+
+/* ============================================
+   SKILLS LOGO GRID
+============================================ */
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, auto);
+  gap: 10px; 
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  height: 80%;
+  position: absolute;
+  top: 55%;
+  left: 48%;
+  transform: translate(-50%, -50%);
+  z-index: 900; 
+}
+.Skill-1,
+.Skill-2,
+.Skill-3,
+.Skill-4,
+.Skill-5,
+.Skill-6,
+.Skill-7,
+.Skill-8,
+.Skill-9,
+.Skill-10,
+.Skill-11,
+.Skill-12,
+.Skill-13,
+.Skill-14,
+.Skill-15 {
+  position: relative !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  width: 120% !important;
+  height: auto !important;
+  max-height: 75px;
+  object-fit: contain !important;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.Skill-1:hover,
+.Skill-2:hover,
+.Skill-3:hover,
+.Skill-4:hover,
+.Skill-5:hover,
+.Skill-6:hover,
+.Skill-7:hover,
+.Skill-8:hover,
+.Skill-9:hover,
+.Skill-10:hover,
+.Skill-11:hover,
+.Skill-12:hover,
+.Skill-13:hover,
+.Skill-14:hover,
+.Skill-15:hover {
+  transform: scale(1.15) !important;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+}
+/* ============================================
+   END OF Skills LOGO GRID
+============================================ */
+.pift{
+  position: fixed;
+  width: 80%;
+  height: auto;
+  top: 70%;
+  left: 50%;
+  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.6));
+}
+.projs{
+ position: absolute;
+  bottom: 85%;
+  left: 58%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 70%;
+  z-index: 10;
+  font-family: 'Handlee', cursive;
+}
+
+.projs-title{
+  font-size: 30px;
+  font-weight: bold;
+  color: #1a1a1a;
+  margin: 40% 0 0 0;
+  font-family: 'Handlee', cursive;
+}
+.SOAR-proj{
+  position: fixed;
+  width: 50%;
+  height: auto;
+  top: 27%;
+  left: 30%;
+  border: #000000 solid 4px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Soar-text{
+  background-color: white ;
+  position: absolute; 
+  border: #000000 solid 2px;
+  bottom: 57%;
+  left: 30%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 50%;
+  z-index: 10;
+  font-family: 'Handlee', cursive;
+}
+.soar-desc{
+  font-size: 12px;
+  font-weight: bolder;
+  background-color: white;
+  color: #000000;
+  margin: 0;
+  line-height: 1.6;
+  font-family: 'Handlee', cursive;
+  text-align: center;
+}
+.Soarshirt{
+  position: fixed;
+  width: 40%;
+  height: auto;
+  top: 30%;
+  left: 73%;
+  cursor: pointer;
+  rotate: 15deg;
+}
+
+.Band-proj{
+  position: fixed;
+  width: 50%;
+  height: 21%;
+  top: 55%;
+  left: 72%;
+  border: #ffbb00 solid 4px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.Band-text{
+  background-color: #000000;
+  position: absolute; 
+  border: #ffbb00 solid 2px;
+  border-radius: 2px;
+  bottom: 29%;
+  left: 73%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 50%;
+  z-index: 10;
+  font-family: 'Handlee', cursive;
+}
+.Band-desc{
+  font-size: 12px;
+  font-weight: bolder;
+  background-color:#000000;
+  color: #ffbb00;
+  margin: 0;
+  line-height: 1.6;
+  font-family: 'Handlee', cursive;
+  text-align: center;
+}
+.Bandcon{
+  position: fixed;
+  width: 40%;
+  height: auto;
+  top: 53%;
+  left: 30%;
+  cursor: pointer;
+  rotate: -15deg;
+}
+
+.socit-proj{
+  position: fixed;
+  width: 50%;
+  height: 21%;
+  top: 83%;
+  left: 30%;
+  border: #035caf solid 4px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.socit-text{
+  background-color: #bee4f5;
+  position: absolute; 
+  border: #035caf solid 2px;
+  border-radius: 2px;
+  bottom: 2%;
+  left: 30%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 50%;
+  z-index: 10;
+  font-family: 'Handlee', cursive;
+}
+.socit-desc{
+  font-size: 12px;
+  font-weight: bolder;
+  background-color:#bee4f5;
+  color: #152352;
+  margin: 0;
+  line-height: 1.6;
+  font-family: 'Handlee', cursive;
+  text-align: center;
+}
+.socitmerchs{
+  position: fixed;
+  width: 40%;
+  height: auto;
+  top: 90%;
+  left: 70%;
+  cursor: pointer;
+  rotate: 15deg;
+}
