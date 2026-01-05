@@ -696,11 +696,11 @@ img {
 
 /* Gallery Images */
 .gallery-img {
-  position: relative;  /* Override the default absolute */
-  width: 100%;       /* Fill the width of the grid cell */
-  height: auto;      /* Maintain aspect ratio and remove vertical gaps */
-  object-fit: contain; /* Prevents logos from stretching/distorting */
-  display: block;    /* Removes tiny bottom alignment gaps */
+  position: relative;  
+  width: 100%;       
+  height: auto;      
+  object-fit: contain; 
+  display: block;    
   margin: 0 auto;
 }
 
@@ -902,11 +902,11 @@ img {
 }
 
 .friends-grid-img{
-  position: relative;  /* Override the default absolute */
-  width: 90%;       /* Fill the width of the grid cell */
-  height: auto;      /* Maintain aspect ratio and remove vertical gaps */
-  object-fit: contain; /* Prevents logos from stretching/distorting */
-  display: block;    /* Removes tiny bottom alignment gaps */
+  position: relative;  
+  width: 90%;       
+  height: auto;      
+  object-fit: contain; 
+  display: block;   
   margin: 0 auto;
   border: #855a0a solid 2px;
   border-radius: 7px;
@@ -1667,18 +1667,7 @@ img {
 /*=============================================
     GWEN IMAGES
 =============================================*/
-/* ============================================
-   RESPONSIVE DESIGN NOTE
-   
-   This website uses position: fixed elements that
-   are positioned relative to the viewport, making
-   traditional responsive scaling difficult.
-   
-   For best viewing experience, this site is 
-   optimized for desktop/laptop screens.
-============================================ */
 
-/* Adjust resources link on small screens */
 @media screen and (max-width: 400px) {
   .resources-link {
     font-size: 0.9rem;
@@ -1687,7 +1676,7 @@ img {
 }
 
 /* ============================================
-   SUBTLE DECORATIONS (Pages 6-9)
+   DECORATIONS (Pages 6-9)
 ============================================ */
 .spark-p8 {
   position: fixed;
@@ -1926,7 +1915,6 @@ img {
   grid-template-rows: repeat(2, 1fr);
   gap: 12px; 
   
-  /* Positioning over the white card area */
   position: absolute;
   width: 80%;
   height: 65%;
@@ -1940,17 +1928,13 @@ img {
   position: relative;
   width: 100%;
   height: 100%;
-  /* Ensures the 4 photos fill their boxes perfectly */
   object-fit: cover; 
-  border-radius: 8px; /* Smooth corners without a border line */
+  border-radius: 8px;
   cursor: pointer;
   display: block;
 }
 
 /* Spotify playlist for page 12 */
-/* ============================================
-    SPOTIFY GALLERY PAGE 12
-============================================ */
 .spotify-gallery-12 {
   position: absolute;
   left: 50%;
@@ -1968,7 +1952,6 @@ img {
   gap: 8px;
 }
 
-/* Custom Scrollbar to keep it looking clean */
 .spotify-gallery-12::-webkit-scrollbar {
   width: 5px;
 }
@@ -1979,7 +1962,7 @@ img {
 
 .music-container {
   position: absolute;
-  top: 5%; /* Positions the "FAVORITE SONGS" title at the top */
+  top: 5%; 
   left: 50%;
   transform: translateX(-50%);
   width: 90%;
@@ -1988,7 +1971,7 @@ img {
 }
 
 .musicc {
-  font-family: 'Inter', sans-serif; /* Replace with your notebook font */
+  font-family: 'Inter', sans-serif;
   font-size: 2rem;
   font-weight: bold;
   letter-spacing: 2px;
@@ -2011,13 +1994,9 @@ img {
 ============================================ */
 .social-gallery-grid {
   display: grid;
-  /* Keep it as 1 column as you requested previously, or 2 if preferred */
   grid-template-columns: repeat(2, 1fr); 
-  /* Define specific row heights to prevent overlapping */
   grid-template-rows: repeat(4, 100px); 
-  /* Increase this gap value to widen the vertical space */
   gap: 50px; 
-  
   position: absolute;
   top: 60%;
   left: 50%;
@@ -2025,7 +2004,7 @@ img {
   
   width: 80%;
   z-index: 500;
-  /* Ensure children don't overflow weirdly */
+    
   align-items: center;
   justify-items: center;
 }
@@ -2045,7 +2024,6 @@ img {
 }
 
 .social-gallery-img {
-  /* Set a fixed size so they don't squash */
   width: 90px;
   height: 90px;
   object-fit: contain;

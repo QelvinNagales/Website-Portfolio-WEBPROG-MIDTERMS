@@ -136,11 +136,9 @@ for (let p = 0; p < PAGES; p++) {
   }
 
 if (p === 1) {
-  // Create gallery container
   const gallery = document.createElement('div');
   gallery.className = 'gallery';
   
-  // Array of your images with links
   const images = [
     { src: 'MSC.png', link: 'https://www.facebook.com/APCMSC' }, 
     { src: 'Band.png', link: 'https://www.facebook.com/theapcband' },
@@ -152,7 +150,6 @@ if (p === 1) {
     { src: 'SoCIT.png', link: 'https://www.facebook.com/apc.socit' }
   ];
   
-  // Loop through and create each image
   images.forEach(({ src, link }) => {
     const a = document.createElement('a');
     a.href = link;
@@ -1300,20 +1297,19 @@ if (p === 5) {
   const spotifyGallery = document.createElement('div');
   spotifyGallery.className = 'spotify-gallery-12';
 
-  // Array of your 5 Spotify embed URLs
   const songs = [
-    "https://open.spotify.com/embed/track/2LlOeW5rVcvl3QcPNPcDus?utm_source=generator", // Example 1
-    "https://open.spotify.com/embed/track/5tlb0AxuzsMWL2GtEppXGX?utm_source=generator", // Example 2
-    "https://open.spotify.com/embed/track/1ytElsSPsJ1GBqMfPYydRX?utm_source=generator", // Example 3
-    "https://open.spotify.com/embed/track/312z6PZ8wwREck8613PkJk?utm_source=generator", // Example 4
-    "https://open.spotify.com/embed/album/2T523YMzbCSM86LYZDCZLI?utm_source=generator"  // Example 5
+    "https://open.spotify.com/embed/track/2LlOeW5rVcvl3QcPNPcDus?utm_source=generator", 
+    "https://open.spotify.com/embed/track/5tlb0AxuzsMWL2GtEppXGX?utm_source=generator", 
+    "https://open.spotify.com/embed/track/1ytElsSPsJ1GBqMfPYydRX?utm_source=generator", 
+    "https://open.spotify.com/embed/track/312z6PZ8wwREck8613PkJk?utm_source=generator", 
+    "https://open.spotify.com/embed/album/2T523YMzbCSM86LYZDCZLI?utm_source=generator" 
   ];
 
   songs.forEach((link) => {
     const iframe = document.createElement('iframe');
     iframe.src = link;
     iframe.width = "100%";
-    iframe.height = "80"; // Using compact players to fit 5 on one page
+    iframe.height = "80"; 
     iframe.frameBorder = "0";
     iframe.allow = "autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture";
     iframe.loading = "lazy";
@@ -1350,8 +1346,6 @@ if (p === 5) {
     img.src = `assets/Images/Gwen/${src}`;
     img.className = 'photo-grid-img-11';
     img.alt = 'Flower photo';
-    
-    // Keeping the modal functionality if you have it
     img.addEventListener('click', () => openModal(img.src));
     
     grid.appendChild(img);
@@ -1362,7 +1356,6 @@ if (p === 5) {
 
   // ========== PAGE 13 (p=6 front) BACKGROUND ==========
   if (p === 6) {
-    // Decorative elements
     const img1 = document.createElement('img');
     img1.src = 'assets/Images/Doodles and stickers/Spark4.png';
     img1.className = 'spark4';
@@ -1406,12 +1399,10 @@ if (p === 6) {
     anchor.className = 'social-gallery-item';
 
     const img = document.createElement('img');
-    // Using the relative path from your project root
     img.src = `assets/Images/LOGO/${social.src}`; 
     img.alt = social.src;
     img.className = 'social-gallery-img';
     
-    // Fallback if images fail to load
     img.onerror = () => {
       console.error(`Missing Image: ${img.src}`);
       anchor.innerHTML = `<span style="color:blue; text-decoration:underline;">${social.src.split('.')[0]}</span>`;
