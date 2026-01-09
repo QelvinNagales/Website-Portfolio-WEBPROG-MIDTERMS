@@ -1464,7 +1464,7 @@ if (p === 6) {
     resourcesContainer2.innerHTML = `
       <h2 class="resources-title">AI & Tools</h2>
       <div class="resources-content">
-        <p class="resources-section"><strong>AI Assistance:</strong></p>
+        <p class="resources-section"><strong><a href="chat_sessions.html" target="_blank" style="color:inherit;text-decoration:underline;">AI Assistance:</a></strong></p>
         <p class="resources-item">• GitHub Copilot</p>
         <p class="resources-item">• Used for code clarification, debugging,</p>
         <p class="resources-item">  guidance & validation fixes</p>
